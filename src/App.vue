@@ -13,7 +13,7 @@ import NavDra from "./components/NavDra";
 
 export default {
   components: {
-    NavDra,
-  },
+    NavDra
+  }
 };
 </script>

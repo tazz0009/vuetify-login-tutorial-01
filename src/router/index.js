@@ -26,28 +26,28 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue"),
+    component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue")
   },
   {
     path: "/login",
     name: "login",
     beforeEnter: rejectAuthUser,
     component: () =>
-      import(/* webpackChunkName: "login" */ "../views/Login.vue"),
+      import(/* webpackChunkName: "login" */ "../views/Login.vue")
   },
   {
     path: "/mypage",
     name: "mypage",
     beforeEnter: onlyAuthUser,
     component: () =>
-      import(/* webpackChunkName: "mypage" */ "../views/MyPage.vue"),
-  },
+      import(/* webpackChunkName: "mypage" */ "../views/MyPage.vue")
+  }
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes
 });
 
 export default router;

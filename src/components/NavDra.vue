@@ -69,11 +69,11 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   data: () => ({ drawer: null }),
   computed: {
-    ...mapGetters("login", ["isLogin"]),
+    ...mapGetters("login", ["isLogin"])
   },
   methods: {
-    ...mapActions("login", ["logout"]),
-  },
+    ...mapActions("login", ["logout"])
+  }
 };
 </script>
 

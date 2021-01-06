@@ -42,14 +42,14 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   data: () => ({
     email: "",
-    password: "",
+    password: ""
   }),
   methods: {
-    ...mapActions("login", ["login"]),
+    ...mapActions("login", ["login"])
   },
   computed: {
-    ...mapGetters("login", ["isLoginError"]),
-  },
+    ...mapGetters("login", ["isLoginError"])
+  }
 };
 </script>
 <style scoped>
