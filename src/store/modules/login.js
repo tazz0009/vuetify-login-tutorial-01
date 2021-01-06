@@ -6,18 +6,18 @@ const state = () => ({
       id: 1,
       name: "test01",
       email: "test01@test.com",
-      password: "1234qwer"
+      password: "1234qwer",
     },
     {
       id: 2,
       name: "test02",
       email: "test02@test.com",
-      password: "1234qwer"
-    }
+      password: "1234qwer",
+    },
   ],
   userInfo: null,
   isLogin: false,
-  isLoginError: false
+  isLoginError: false,
 });
 
 // getters
@@ -30,7 +30,7 @@ const getters = {
   },
   getUserInfo(state) {
     return state.userInfo;
-  }
+  },
 };
 
 // actions
@@ -39,7 +39,7 @@ const actions = {
   login({ state, commit }, paylord) {
     const { email, password } = paylord;
     const findUser = state.allUsers.find(
-      user => user.email === email && user.password === password
+      (user) => user.email === email && user.password === password
     );
     if (findUser) {
       commit("loginSuccess");
@@ -51,8 +51,12 @@ const actions = {
   },
   logout({ commit }) {
     commit("logout");
-    router.push({ name: "home" });
-  }
+    if (router.history.current.path !== "/") {
+      router.push({ name: "home" });
+    } else {
+      router.go({ name: "home" });
+    }
+  },
 };
 
 // mutations
@@ -71,7 +75,7 @@ const mutations = {
     state.isLogin = null;
     state.isLoginError = null;
     state.userInfo = null;
-  }
+  },
 };
 
 export default {
@@ -79,5 +83,5 @@ export default {
   state,
   getters,
   actions,
-  mutations
+  mutations,
 };
