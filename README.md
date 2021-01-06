@@ -16,9 +16,20 @@ Vue CLI v4.5.9
 ? Where do you prefer placing config for Babel, ESLint, etc.? In dedicated config files
 ? Save this as a preset for future projects? No
 
+cd vuetify-login-tutorial-01
+
 vue add vuetify
 
 npm install
+```
+
+### icon setup add link index.html
+
+```
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons"
+      rel="stylesheet"
+    />
 ```
 
 ### Compiles and hot-reloads for development
